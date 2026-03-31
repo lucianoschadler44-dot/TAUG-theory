@@ -75,3 +75,18 @@ MIT License. See [LICENSE](LICENSE).
 
 Luciano Andrey Schadler — lucianoschadler44@gmail.com
 Schadler Tech | FAG Centro Universitário, Cascavel-PR, Brazil
+
+## S26 Update (31 March 2026)
+
+**New results since initial submission:**
+- `σ₈(αH)` scan: 21 EFTCAMB points, `σ₈ = 0.817 − 0.402αH` (R²>0.999)
+- **Key finding:** A₄_TAUG ≠ −A₃ → TAUG is genuinely DHOST-Ia (not GLPV)
+  - This A₄ deviation is precisely what produces η=23/17 vs η≈1.13 (GLPV)
+- η=23/17 confirmed algebraically: `2Σ/μΨ−1 = 23/17` (exact)
+- μ₀=−0.121 within Planck 2020 at **0.27σ** (Frusciante+2025)
+- CFT hierarchy mapped: M(3,4)→M(4,5)→M(5,6)→M(6,7)
+- TAUGb [M(4,5), αH=1/10] identified as sister theory
+- Euclid SNR forecast: SNR(η)=11.8σ (optimistic), SNR(μ₀)=12.1σ
+
+**Papers analyzed:** LMNV 2017, Bellini+Sawicki 2014, Langlois 2018, BPZ 1984,
+Charmousis+2019, Hirano+2019, DESI 2024, Euclid Frusciante+2025.
