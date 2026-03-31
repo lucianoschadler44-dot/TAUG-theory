@@ -1,0 +1,10 @@
+# P0 MCMC Result — CamSpec2021 TTTEEE
+# 9th independent chain
+# Date: 2026-03-31
+aH_median = 0.1267
+aH_sigma_plus = 0.0534
+aH_sigma_minus = 0.0507
+tension_sigma = 0.03
+n_samples_half = 8566
+likelihood = CamSpec2021.TTTEEE
+n_data_points = 9915
