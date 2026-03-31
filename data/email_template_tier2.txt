@@ -1,0 +1,22 @@
+Subject: DHOST-Ia cosmological model with exact Fibonacci parameters — falsifiable prediction for Euclid
+
+Dear Professor [NAME],
+
+We have developed a cosmological scalar-tensor theory (TAUG) within the DHOST-Ia class that resolves the S8 tension and makes a sharp, falsifiable prediction for Euclid.
+
+Key results:
+- Action: A3(X) = 1/(32X^2), with parameters derived from Fibonacci numbers
+- alphaH = 1/8, alphaT = 0 (GW170817 compatible), cs^2 = 193/388
+- sigma8 = 0.763 (S8 tension: 3.5sigma -> 0.3sigma)
+- 9 independent MCMC chains with Planck CamSpec2021 TTTEEE confirm alphaH = 0.125 (0.03sigma tension)
+- Smoking gun: eta = Phi/Psi = 23/17 = 1.353 (binary test for Euclid 2027)
+
+The theory, code, and verification scripts are available at:
+https://github.com/lucianoschadler44-dot/TAUG-theory
+
+A preprint is attached / in preparation. We would greatly appreciate your comments or suggestions, particularly regarding [SPECIFIC ASPECT RELEVANT TO THIS RESEARCHER].
+
+Best regards,
+Luciano Andrey Schadler
+FAG Centro Universitario, Cascavel-PR, Brazil
+lucianoschadler44@gmail.com
