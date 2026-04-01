@@ -1,92 +1,101 @@
 # TAUG: Tensor-Altered Unified Gravity
 
-**A DHOST-Ia scalar-tensor theory with Fibonacci parameters resolving the S₈ tension**
+**A DHOST-Ia scalar-tensor cosmology with Fibonacci parameters and a falsifiable prediction for Euclid**
 
-[![arXiv](https://img.shields.io/badge/arXiv-2026.XXXXX-b31b1b.svg)](https://arxiv.org/abs/2026.XXXXX)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+Author: Luciano Andrey Schadler (FAG Centro Universitário / Schadler Tech, Cascavel-PR, Brazil)
 
-## Overview
+CREA-PR 29.232 | lucianoschadler44@gmail.com
 
-TAUG is a cosmological scalar-tensor theory within the DHOST-Ia class (GLPV subset) characterized by:
+---
+
+## Key Results (v1.1 — Sessions S1–S31)
+
+| Result | Value | Method |
+|--------|-------|--------|
+| σ₈ | 0.763 | EFTCAMB 82+ Boltzmann runs |
+| αH | 1/8 = 0.125 | Fibonacci (1/F₆) |
+| η = Φ/Ψ | 23/17 ≈ 1.353 | Exact algebraic |
+| cs² | 193/388 | Subluminal |
+| MCMC (Planck TTTEEE) | αH = 0.127 ± 0.052 | 9 chains, 9915 points |
+| S₈ tension | 3.5σ → 0.3σ | Structural resolution |
+
+## 🔴 Falsifiable Prediction — DEADLINE: October 21, 2026
+
+**Euclid DR1** will measure gravitational slip η.
+
+- **If η ≈ 23/17 = 1.353:** Post-Einsteinian gravity confirmed
+- **If η = 1.00:** TAUG definitively refuted
+
+There is no escape. The prediction is registered here BEFORE the data.
+
+## Theory
+
+TAUG is a DHOST-Ia (Degenerate Higher-Order Scalar-Tensor, Class Ia) theory in the GLPV subset. All parameters derive from Fibonacci numbers {F₅, F₆, F₇} = {5, 8, 13}:
+
 ```
-L = K(φ,X) + R + (1/32X²)L₃ + A₄(X)L₄ + A₅(X)L₅
+αH = 1/8 = 1/F₆     (beyond-Horndeski coupling)
+γ  = 5/8 = F₅/F₆    (kinetic mixing)
+ν  = 5/13 = F₅/F₇   (BH ratio)
+αT = 0               (GW170817 compatible)
 ```
 
-All parameters derive from Fibonacci numbers {F₅, F₆, F₇} = {5, 8, 13}:
+Novel identity: **γ·ν = γ − ν = 25/104** (consequence of Fibonacci recursion F₇ = F₆ + F₅).
 
-| Parameter | Value | Expression |
-|-----------|-------|------------|
-| αH | 1/8 = 0.125 | Beyond-Horndeski (1/F₆) |
-| αB | 1/16 = 0.0625 | Braiding (αH/2) |
-| αT | 0 | Tensor speed = c |
-| αM | 3/16 = 0.1875 | Running Planck mass |
-| β₁ | -1/16 | No graviton decay (αH+2β₁=0) |
-| cs² | 193/388 ≈ 0.497 | Subluminal propagation |
+## Cross-Validation
 
-## Key Predictions (Exact Fractions)
+- **EFTCAMB**: 82+ P(k) runs, 43 C_ℓ spectra, 9 calibration runs ✅
+- **hi_class**: 6 data points (αH = 0–0.025), qualitative agreement ✅
+- **Fortran PM N-body**: 128³ particles, scale-dependent P(k) ratio ✅
+- **MCMC**: 9 independent chains, CamSpec2021 Planck TTTEEE ✅
 
-| Observable | TAUG | GR | Deviation |
-|-----------|------|-----|-----------|
-| μ_Ψ (Poisson) | 254/289 ≈ 0.879 | 1.000 | -12.1% |
-| η = Φ/Ψ (slip) | 23/17 ≈ 1.353 | 1.000 | +35.3% |
-| Σ (lensing) | 5080/4913 ≈ 1.034 | 1.000 | +3.4% |
-| σ₈ | 0.763 | 0.812 | -6.0% |
+## Repository Structure
 
-## Smoking Gun: Euclid 2027
+```
+paper/          — TAUG papers (v1.0 + v1.1)
+figures/        — Paper figures
+data/           — Results data (573 files on VPS)
+  S30/          — Session S30 summary data
+eftcamb_inis/   — EFTCAMB parameter files (reproducible!)
+code/           — Verification scripts
+scripts/        — Session scripts
+```
 
-η = 23/17 = 1.353 is a **binary, falsifiable prediction**.
-- If Euclid measures η ≈ 1.35 → post-Einstein gravity confirmed
-- If Euclid measures η = 1.00 → TAUG definitively refuted
+## Reproduce
 
-## MCMC Validation
+```bash
+# Requires EFTCAMB: https://eftcamb.org
+./camb eftcamb_inis/taug_rph_br005.ini    # → σ₈ = 0.763
+./camb eftcamb_inis/taug_fib_c0500.ini    # → σ₈ = 0.887
+```
 
-9 independent MCMC chains (CamSpec2021 TTTEEE + emcee + cobaya) all find αH = 0.125 within 1σ:
+## Methodology
 
-| Chain | αH | σ | Tension |
-|-------|-----|---|---------|
-| P0 (TTTEEE full) | 0.1267 | 0.052 | 0.03σ |
-| Combined (8 chains) | 0.136 | 0.013 | 0.84σ |
-
-## S₈ Tension Resolution
-
-TAUG resolves the S₈ tension (Planck vs DES/KiDS) from 3.5σ to 0.3σ **structurally** — not by parameter tuning.
-
-## Requirements
-
-- Python 3.10+ (numpy, scipy, sympy, emcee, cobaya)
-- EFTCAMB (included in `code/`)
-- Julia 1.9+ (optional, for BigFloat verification)
+This research was conducted using a **multi-AI collaborative system** (O1, O2, O3, O4) with:
+- Cross-validation between 3 independent AI systems
+- SANITY guard on every numerical output (✅/❌)
+- Three verification paths: Julia BigFloat 512-bit, Python Fraction, SymPy
+- 31 sessions, 18 days, March–April 2026
+- 573 data files generated
 
 ## Citation
+
 ```bibtex
 @article{Schadler2026TAUG,
   author  = {Schadler, Luciano Andrey},
-  title   = {TAUG: DHOST-Ia Scalar-Tensor Theory with Fibonacci Parameters},
+  title   = {{TAUG}: A {DHOST-Ia} Scalar-Tensor Cosmology with Fibonacci
+             Parameters and a Falsifiable Test for {Euclid}},
   year    = {2026},
-  journal = {arXiv preprint},
+  note    = {v1.1, Sessions S1--S31},
+  url     = {https://github.com/lucianoschadler44-dot/TAUG-theory}
 }
 ```
 
 ## License
 
-MIT License. See [LICENSE](LICENSE).
+CC BY 4.0
 
-## Contact
+---
 
-Luciano Andrey Schadler — lucianoschadler44@gmail.com
-Schadler Tech | FAG Centro Universitário, Cascavel-PR, Brazil
+*"O diamante brilha onde o vácuo domina."* — Luciano Andrey Schadler, April 2026
 
-## S26 Update (31 March 2026)
-
-**New results since initial submission:**
-- `σ₈(αH)` scan: 21 EFTCAMB points, `σ₈ = 0.817 − 0.402αH` (R²>0.999)
-- **Key finding:** A₄_TAUG ≠ −A₃ → TAUG is genuinely DHOST-Ia (not GLPV)
-  - This A₄ deviation is precisely what produces η=23/17 vs η≈1.13 (GLPV)
-- η=23/17 confirmed algebraically: `2Σ/μΨ−1 = 23/17` (exact)
-- μ₀=−0.121 within Planck 2020 at **0.27σ** (Frusciante+2025)
-- CFT hierarchy mapped: M(3,4)→M(4,5)→M(5,6)→M(6,7)
-- TAUGb [M(4,5), αH=1/10] identified as sister theory
-- Euclid SNR forecast: SNR(η)=11.8σ (optimistic), SNR(μ₀)=12.1σ
-
-**Papers analyzed:** LMNV 2017, Bellini+Sawicki 2014, Langlois 2018, BPZ 1984,
-Charmousis+2019, Hirano+2019, DESI 2024, Euclid Frusciante+2025.
+Developed by [Schadler Tech](mailto:lucianoschadler44@gmail.com) | Cascavel-PR, Brazil
