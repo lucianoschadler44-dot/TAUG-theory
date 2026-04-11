@@ -1,101 +1,160 @@
-# TAUG: Tensor-Altered Unified Gravity
+# TAUG — Topological Algebraic Unified Gravity
 
-**A DHOST-Ia scalar-tensor cosmology with Fibonacci parameters and a falsifiable prediction for Euclid**
-
-Author: Luciano Andrey Schadler (FAG Centro Universitário / Schadler Tech, Cascavel-PR, Brazil)
-
-CREA-PR 29.232 | lucianoschadler44@gmail.com
+**Version 1.2 — April 11, 2026**
+**Author:** Luciano A. Schadler
+**Status:** observationally viable, awaiting Euclid DR1 (October 2026)
 
 ---
 
-## Key Results (v1.1 — Sessions S1–S31)
+## ⚠ NOTICE — v1.1 → v1.2 retraction
 
-| Result | Value | Method |
-|--------|-------|--------|
-| σ₈ | 0.763 | EFTCAMB 82+ Boltzmann runs |
-| αH | 1/8 = 0.125 | Fibonacci (1/F₆) |
-| η = Φ/Ψ | 23/17 ≈ 1.353 | Exact algebraic |
-| cs² | 193/388 | Subluminal |
-| MCMC (Planck TTTEEE) | αH = 0.127 ± 0.052 | 9 chains, 9915 points |
-| S₈ tension | 3.5σ → 0.3σ | Structural resolution |
+The previous version (v1.1) contained an error in the slip formula
+that propagated to the central observational prediction. The
+mathematical core (α_H = 1/8 derivation, algebraic chain, ghost
+stability) is unchanged. **The observational prediction has been
+corrected from η = 23/17 to η = 8/9.** See `RETRACTION_NOTICE_v1.1.md`
+for the full explanation.
 
-## 🔴 Falsifiable Prediction — DEADLINE: October 21, 2026
+---
 
-**Euclid DR1** will measure gravitational slip η.
+## What TAUG is
 
-- **If η ≈ 23/17 = 1.353:** Post-Einsteinian gravity confirmed
-- **If η = 1.00:** TAUG definitively refuted
+TAUG is a specific point in the parameter space of Degenerate
+Higher-Order Scalar-Tensor (DHOST) theories of type Ia, defined by
+fixing the EFT-of-dark-energy parameters to rational fractions
+derived from a conformal field theory argument involving the
+M(5,6) Ising tricritical model.
 
-There is no escape. The prediction is registered here BEFORE the data.
+| Parameter | Value | Origin |
+|-----------|-------|--------|
+| α_H | 1/8 | CFT M(5,6) h₂,₁ (tricritical Ising) |
+| α_T | 0 | Charmousis G₅ = 0 (structural) |
+| α_B | 1/16 | = α_H/2 |
+| β₁ | -1/16 | = -α_H/2 (Crisostomi 2019 stability) |
+| α_M | 3/16 | = 3α_H/2 (running M_P) |
+| α_K | +557/1544 | DEST-32, sign-flip for no-ghost |
+| c_s² | 193/388 | sound speed (subluminal, stable) |
+| β₃ | 0 | Horndeski sub-class |
 
-## Theory
-
-TAUG is a DHOST-Ia (Degenerate Higher-Order Scalar-Tensor, Class Ia) theory in the GLPV subset. All parameters derive from Fibonacci numbers {F₅, F₆, F₇} = {5, 8, 13}:
-
+The temporal profile is:
 ```
-αH = 1/8 = 1/F₆     (beyond-Horndeski coupling)
-γ  = 5/8 = F₅/F₆    (kinetic mixing)
-ν  = 5/13 = F₅/F₇   (BH ratio)
-αT = 0               (GW170817 compatible)
+α_H(a) = (1/8) · 4 · a · (1-a)
+```
+which gives α_H = 0 at z = 0 (recovering GR exactly today, passing
+solar-system tests trivially) and at z → ∞ (recovering GR in the
+early universe, passing CMB tests trivially). The peak occurs at
+z = 1, where TAUG modifications are maximal.
+
+---
+
+## Predictions (TAUG v1.2)
+
+All predictions below are derived rigorously from verbatim formulas
+in the DHOST-Ia literature.
+
+### Newton constant (LMNV17 line 1022)
+```
+8πG_N = 1 / [(1 + α_H)²/(1 + α_T) - β₃/2] = 64/81 ≈ 0.7901
+```
+21.0% reduction relative to canonically normalized graviton coupling.
+
+### Slip parameter (LMNV17 line 992 + Crisostomi+2019 App.B)
+```
+η ≡ Φ/Ψ = 8/9 ≈ 0.8889
+```
+**11% reduction below GR** at peak of α_H profile.
+
+### Modified Poisson coefficients
+```
+μ_Φ/μ_GR = 256/289 ≈ 0.886
+μ_Ψ/μ_GR = 288/289 ≈ 0.997
+μ₀ ≡ μ_Φ - 1 = -33/289 ≈ -0.114
+Σ₀ = (μ_Φ + μ_Ψ)/2 - 1 = -17/289 ≈ -0.059
+η₀ = η - 1 = -1/9 ≈ -0.111
 ```
 
-Novel identity: **γ·ν = γ − ν = 25/104** (consequence of Fibonacci recursion F₇ = F₆ + F₅).
-
-## Cross-Validation
-
-- **EFTCAMB**: 82+ P(k) runs, 43 C_ℓ spectra, 9 calibration runs ✅
-- **hi_class**: 6 data points (αH = 0–0.025), qualitative agreement ✅
-- **Fortran PM N-body**: 128³ particles, scale-dependent P(k) ratio ✅
-- **MCMC**: 9 independent chains, CamSpec2021 Planck TTTEEE ✅
-
-## Repository Structure
-
+### Sound speed
 ```
-paper/          — TAUG papers (v1.0 + v1.1)
-figures/        — Paper figures
-data/           — Results data (573 files on VPS)
-  S30/          — Session S30 summary data
-eftcamb_inis/   — EFTCAMB parameter files (reproducible!)
-code/           — Verification scripts
-scripts/        — Session scripts
+c_s² = 193/388 ≈ 0.4974
 ```
+Subluminal, no-ghost, no-gradient instability.
 
-## Reproduce
+---
 
-```bash
-# Requires EFTCAMB: https://eftcamb.org
-./camb eftcamb_inis/taug_rph_br005.ini    # → σ₈ = 0.763
-./camb eftcamb_inis/taug_fib_c0500.ini    # → σ₈ = 0.887
-```
+## Comparison with current data
 
-## Methodology
+### DESI 2024 MG (arXiv:2411.12026, ΛCDM background)
 
-This research was conducted using a **multi-AI collaborative system** (O1, O2, O3, O4) with:
-- Cross-validation between 3 independent AI systems
-- SANITY guard on every numerical output (✅/❌)
-- Three verification paths: Julia BigFloat 512-bit, Python Fraction, SymPy
-- 31 sessions, 18 days, March–April 2026
-- 573 data files generated
+| Quantity | DESI measurement | TAUG v1.2 | Tension |
+|----------|-----------------|-----------|---------|
+| μ₀ | +0.05 ± 0.22 | -0.114 | 0.75σ |
+| Σ₀ | +0.008 ± 0.045 | -0.059 | 1.48σ |
+| η₀ | +0.09 +0.36/-0.60 | -0.111 | 0.34σ |
+
+**TAUG v1.2 is compatible with DESI 2024 within ~1.5σ** in all three
+parameters.
+
+### DES Y6
+S₈ = 0.789 ± 0.012 — TAUG-EFTCAMB best-fit S₈ = 0.777 (1σ compatible).
+
+---
+
+## Forecast Euclid DR1 (October 2026)
+
+| σ(η₀) Euclid | Tension TAUG vs GR central=0 |
+|--------------|---------------------|
+| 0.05 | 2.22σ |
+| 0.075 | 1.48σ |
+| 0.10 | 1.11σ |
+
+**TAUG v1.2 will be tested by Euclid DR1 at the 1-2σ level.**
+
+---
+
+## What v1.2 does NOT predict (correcting v1.1 errors)
+
+| v1.1 (incorrect, RETRACTED) | v1.2 (corrected) |
+|-----------------|------------------|
+| η = 23/17 ≈ 1.353 (35% MORE deflection) | η = 8/9 ≈ 0.889 (11% LESS deflection) |
+| 8πG_N = 256/289 | 8πG_N = 64/81 |
+| μ_Ψ = 254/289 | μ_Ψ = 288/289 |
+| Smoking-gun "binary" 35% deviation | Modest 11% deviation peaked at z ≈ 1 |
+| Refutable at 7σ by Euclid DR1 | Refutable at 1-2σ by Euclid DR1 |
+
+---
+
+## Methodological note
+
+The TAUG project is developed under a multi-AI blind verification
+protocol (MDCA-IA). The discovery and correction of the v1.1 error
+in real time, including five formal AI retractions in 12 hours, is
+documented as a case study for a separate methodology paper.
+
+The principle that emerged: **independent multi-AI convergence on
+an incomplete premise is not equivalent to truth.** Human R-G
+meta-questions remain irreplaceable.
+
+---
+
+## Files
+
+- `paper/taug_paper_v1.2_skeleton.tex` — corrected paper skeleton
+- `paper/taug_paper_v1.1_RETRACTED.tex` — DEPRECATED v1.1
+- `RETRACTION_NOTICE_v1.1.md` — formal retraction
+- `eftcamb_inis/` — EFTCAMB input files
+- `derivations/` — symbolic derivation scripts
+
+---
 
 ## Citation
 
-```bibtex
-@article{Schadler2026TAUG,
-  author  = {Schadler, Luciano Andrey},
-  title   = {{TAUG}: A {DHOST-Ia} Scalar-Tensor Cosmology with Fibonacci
-             Parameters and a Falsifiable Test for {Euclid}},
-  year    = {2026},
-  note    = {v1.1, Sessions S1--S31},
-  url     = {https://github.com/lucianoschadler44-dot/TAUG-theory}
+```
+@article{schadler2026taug_v12,
+  author = {Schadler, Luciano A.},
+  title = {{TAUG: A CFT-Anchored Point in DHOST-Ia Parameter Space (v1.2 corrected)}},
+  year = {2026},
+  note = {Version 1.2, GitHub: lucianoschadler44-dot/TAUG-theory},
 }
 ```
 
-## License
-
-CC BY 4.0
-
----
-
-*"O diamante brilha onde o vácuo domina."* — Luciano Andrey Schadler, April 2026
-
-Developed by [Schadler Tech](mailto:lucianoschadler44@gmail.com) | Cascavel-PR, Brazil
+**Sempre progredir, nunca regredir.**

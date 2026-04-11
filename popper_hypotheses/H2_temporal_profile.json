@@ -1,0 +1,42 @@
+{
+  "id": "TAUG-H2",
+  "version": "v1.1",
+  "name": "Temporal profile of alphaH(a)",
+  "hypothesis": "The TAUG parameter alphaH(a) follows a Fibonacci-Hirano profile alphaH(a) = (1/8)*4*a*(1-a) = a*(1-a)/2, which yields alphaH(a=0)=0, alphaH(a=0.5)=1/8 (peak), alphaH(a=1)=0, satisfying both Hulse-Taylor binary pulsar constraint at z=0 and CMB constraint at z=1100.",
+  "type": "functional_form",
+  "predictions": {
+    "z_0": {"alphaH": 0.0, "eta": 1.0, "comment": "GR exact today"},
+    "z_0.5": {"alphaH": 0.111, "eta": 1.316},
+    "z_1": {"alphaH": 0.125, "eta": 1.353, "comment": "peak"},
+    "z_2": {"alphaH": 0.111, "eta": 1.316},
+    "z_10": {"alphaH": 0.041, "eta": 1.121},
+    "z_1100": {"alphaH": 4.5e-4, "eta": 1.0014, "comment": "GR exact at CMB"}
+  },
+  "internal_inconsistency": {
+    "issue": "Paper TAUG v1.1 line 96 declares EFTCAMB RPH parametrization with MP0=0.014, BR0=0.005, exp=3",
+    "implication": "RPH gives alphaH(a)=MP0*a^exp, so alphaH(a=1)=0.014 NOT 0.125",
+    "discrepancy_factor": 8.93,
+    "status": "UNRESOLVED - paper has internal contradiction between Fibonacci profile (peak alphaH=0.125) and EFTCAMB RPH MP0=0.014",
+    "possible_resolutions": [
+      "MP0 in paper uses non-standard normalization (must be specified)",
+      "9 MCMC chains have undetected normalization bug",
+      "Two different parametrizations are mixed in the paper without explicit reconciliation"
+    ]
+  },
+  "falsification_criteria": [
+    {
+      "test_id": "T2.1",
+      "name": "Run EFTCAMB with taug_rph_br005.ini and check if recovers alphaH=0.125 peak or alphaH=0.014 max",
+      "decisive": true,
+      "blocking": "Requires Q5 EFTCAMB run"
+    },
+    {
+      "test_id": "T2.2",
+      "name": "Compare two profile predictions vs Planck CMB lensing",
+      "Profile_A_Fibonacci": "Predicts eta(z=1100)~1, CMB lensing matches GR",
+      "Profile_B_RPH": "Predicts eta(z=1100)~0, CMB lensing matches GR",
+      "decisive": false,
+      "comment": "Both profiles give GR at CMB, so CMB cannot distinguish them"
+    }
+  ]
+}

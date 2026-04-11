@@ -1,0 +1,30 @@
+═══════════════════════════════════════════════════════════════════════
+S33-F1-013epsilon VEREDICTO BAYES CORRELACIONADO
+═══════════════════════════════════════════════════════════════════════
+
+TAUG vs GR dado DESI 2024 MG (Tabela 2, LCDM background)
+
+ESTATÍSTICA HONESTA:
+  Em 3 cenários de correlação (independente, modesta, alta),
+  Bayes factor L(GR)/L(TAUG) ∈ [1.5, 2.5]
+  
+  Escala Jeffreys: INCONCLUSIVO (< 3)
+
+VEREDICTO PRELIMINAR:
+  ✗ TAUG NÃO confirmado por DESI
+  ✗ TAUG NÃO refutado por DESI
+  → DESI é INCONCLUSIVO sobre TAUG vs GR
+  → GR marginalmente preferido (~1.5-2.5x)
+  → Resolução depende de Euclid DR1 (Out 2026)
+
+PROBLEMAS NÃO-RESOLVIDOS (gates pré-EFTCAMB):
+  1. Q3: fórmula η=1+2αM/Λ não validada verbatim em LMNV17/Cris/BS14
+  2. Inconsistência interna paper: MP0=0.014 vs αH=0.125 (fator ~9x)
+  3. Perfil temporal αH(a): Fibonacci ou RPH? (incompatíveis)
+
+PRÓXIMA AÇÃO DECISIVA:
+  Q5: rodar EFTCAMB com taug_hiclass_propto_omega.ini
+  (parametrização propto_omega bate diretamente com DESI eq 3.9)
+  Tempo estimado: 2-5 dias no IARA-LAB
+  
+═══════════════════════════════════════════════════════════════════════

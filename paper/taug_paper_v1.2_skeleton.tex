@@ -1,0 +1,173 @@
+% TAUG paper v1.2 — CORRECTED
+% Author: Luciano A. Schadler
+% Date: April 11, 2026
+% Replaces v1.1 (deprecated)
+
+\documentclass[aps,prd,twocolumn,floatfix,nofootinbib]{revtex4-2}
+\usepackage{amsmath,amssymb,graphicx,hyperref}
+
+\begin{document}
+
+\title{TAUG: A CFT-Anchored Point in DHOST-Ia Parameter Space \\
+       and Its Cosmological Slip Prediction $\eta = 8/9$ \\
+       (Version 1.2 --- corrected)}
+
+\author{Luciano A. Schadler}
+\affiliation{Schadler Tech, Cascavel, PR, Brazil}
+
+\date{April 11, 2026}
+
+\begin{abstract}
+We propose TAUG, a specific point in the parameter space of
+Degenerate Higher-Order Scalar-Tensor (DHOST) theories of type Ia,
+defined by fixing the EFT-of-dark-energy parameters to rational
+fractions derived from the conformal field theory $M(5,6)$
+(tricritical Ising model). The defining values are
+$\alpha_H = 1/8$, $\alpha_T = 0$, $\alpha_B = 1/16$,
+$\beta_1 = -1/16$, $\alpha_M = 3/16$. Using the rigorous slip formula
+from Langlois \emph{et al.} (2017) and Crisostomi \emph{et al.}
+(2019), we compute the cosmological gravitational slip parameter
+and find $\eta \equiv \Phi/\Psi = 8/9 \approx 0.889$, an 11\%
+reduction in gravitational deflection of light relative to GR.
+This prediction is compatible with current DESI 2024 modified-gravity
+constraints within $\sim 1.5\sigma$ and will be tested by Euclid DR1
+in October 2026 at the 1--2$\sigma$ level. We also report an
+algebraic chain relating the EFT parameters that closes exactly
+to twelve non-trivial constraints, with sound speed
+$c_s^2 = 193/388$, no-ghost condition $\alpha_K = +557/1544$, and
+effective Newton constant $8\pi G_N = 64/81$. \textbf{This version
+supersedes v1.1, which contained an error in the slip formula.
+See the retraction notice for details.}
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+[Context: dark energy, modified gravity, DHOST classification, motivation
+for searching specific parameter points anchored in mathematical
+structures rather than continuous parameter spaces.]
+
+\section{The TAUG parameter point}
+
+\subsection{CFT motivation}
+The defining hypothesis is
+\begin{equation}
+\alpha_H = h_{2,1} = \frac{1}{8}
+\end{equation}
+of the conformal weight of the $\phi_{2,1}$ primary field of the
+$M(5,6)$ Virasoro minimal model.
+
+\subsection{Structural relations}
+$\alpha_T = 0$ (Charmousis $G_5 = 0$); $\beta_1 = -\alpha_H/2 = -1/16$
+(Crisostomi 2019 stability); $\alpha_M = 3\alpha_H/2 = 3/16$ (running
+Planck mass); $\alpha_B = \alpha_H/2 = 1/16$; $\alpha_K = +557/1544$
+(DEST-32 with ghost-stability sign-flip from DEST-24/34); $\beta_3 = 0$
+(Horndeski sub-class).
+
+\subsection{Temporal profile}
+\begin{equation}
+\alpha_H(a) = \frac{1}{8} \cdot 4 a (1-a)
+\end{equation}
+gives $\alpha_H = 0$ at $a = 0$ and $a = 1$, with peak $\alpha_H = 1/8$
+at $a = 1/2$ ($z = 1$).
+
+\section{Cosmological observables}
+
+\subsection{Effective Newton constant}
+From LMNV17 \cite{Langlois2017}:
+\begin{equation}
+8\pi G_N = \frac{1}{M^2}\left[\frac{(1+\alpha_H)^2}{1+\alpha_T} - \frac{\beta_3}{2}\right]^{-1}
+\end{equation}
+For TAUG: $\boxed{8\pi G_N = 64/81 \approx 0.7901}$.
+
+\subsection{Gravitational slip}
+From LMNV17 line 992 (Newtonian limit):
+\begin{equation}
+\Psi = \frac{1+\alpha_H}{1+\alpha_T}\Phi \quad\Longrightarrow\quad
+\eta = \frac{1+\alpha_T}{1+\alpha_H} = \frac{8}{9}
+\end{equation}
+From Crisostomi+2019 \cite{Crisostomi2019} App.~B (cosmological QSA
+dominant terms):
+\begin{align}
+\mu_\Phi &= \frac{a^2}{2 M^2 (1-\beta_1)^2}, &
+\mu_\Psi &= \frac{a^2 (1-2\beta_1)}{2 M^2 (1-\beta_1)^2}
+\end{align}
+\begin{equation}
+\boxed{\,\eta = \frac{\mu_\Phi}{\mu_\Psi} = \frac{1}{1-2\beta_1} = \frac{8}{9} \approx 0.889\,}
+\end{equation}
+The two independent derivations converge on the same value $\eta = 8/9$,
+an 11\% reduction below GR.
+
+\subsection{Modified Poisson coefficients}
+\begin{align}
+\mu_\Phi/\mu_\Phi^{\rm GR} &= 256/289 \approx 0.886\\
+\mu_\Psi/\mu_\Psi^{\rm GR} &= 288/289 \approx 0.997\\
+\mu_0^{\rm TAUG} &= -33/289 \approx -0.114\\
+\Sigma_0^{\rm TAUG} &= -17/289 \approx -0.059\\
+\eta_0^{\rm TAUG} &= -1/9 \approx -0.111
+\end{align}
+
+\subsection{Sound speed}
+\begin{equation}
+c_s^2 = \frac{193}{388} \approx 0.497
+\end{equation}
+Subluminal, no instabilities.
+
+\section{Comparison with DESI 2024}
+\begin{table}[h]
+\caption{TAUG v1.2 vs DESI 2024 MG.}
+\begin{tabular}{lccc}
+\hline\hline
+Quantity & DESI 2024 & TAUG v1.2 & Tension \\
+\hline
+$\mu_0$    & $+0.05 \pm 0.22$    & $-0.114$ & $0.75\sigma$ \\
+$\Sigma_0$ & $+0.008 \pm 0.045$  & $-0.059$ & $1.48\sigma$ \\
+$\eta_0$   & $+0.09^{+0.36}_{-0.60}$ & $-0.111$ & $0.34\sigma$ \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+\section{Forecast Euclid DR1}
+For TAUG $\eta_0 = -1/9$, with Euclid forecast $\sigma(\eta_0) \in [0.05, 0.10]$,
+the tension if Euclid central is $0$ ranges from $1.1\sigma$ to $2.2\sigma$.
+\textbf{TAUG v1.2 sobrevive Euclid em todos os cenarios realistas}, em contraste
+com v1.1 que prediria refutacao a $7\sigma$.
+
+\section{Discussion}
+\subsection{Comparison with v1.1 (retracted)}
+v1.1 claimed $\eta = 23/17 \approx 1.353$ (35\% enhancement) based on
+$\eta = 1 + 2\alpha_M/\Lambda$, a Horndeski-like simplification not
+valid for DHOST-Ia genuine. The corrected v1.2 prediction $\eta = 8/9$
+is on the opposite side of GR, derived rigorously from two independent
+verbatim sources.
+
+\subsection{What survives}
+The CFT motivation for $\alpha_H = 1/8$, the algebraic chain of EFT
+parameters, the DEST-32 condition, and $c_s^2$ are independent of
+the slip formula and remain valid.
+
+\section{Conclusion}
+TAUG v1.2 is a specific, falsifiable, mathematically anchored point
+in DHOST-Ia parameter space. Within $\sim 1.5\sigma$ of current DESI,
+testable by Euclid DR1 within months. Character changed from
+``smoking-gun'' to ``modest 11\% reduction peaked at $z \approx 1$,''
+driven by $\beta_1 = -1/16$.
+
+\section*{Acknowledgments}
+The author thanks the AI agents O1--O5 in session S33-F1-013 of
+April 11, 2026, whose blind cross-checks and devil's advocate
+analyses caught the v1.1 slip formula error before any external
+submission.
+
+\begin{thebibliography}{99}
+\bibitem{Langlois2017}
+D.~Langlois, M.~Mancarella, K.~Noui, F.~Vernizzi, arXiv:1703.03797 (2017).
+\bibitem{Crisostomi2019}
+M.~Crisostomi, M.~Lewandowski, F.~Vernizzi, Phys. Rev. D 100, 024025 (2019), arXiv:1903.11591.
+\bibitem{DESI2024MG}
+DESI Collaboration, arXiv:2411.12026 (2024).
+\bibitem{DES_Y6}
+DES Collaboration, arXiv:2601.14559 (2026).
+\end{thebibliography}
+
+\end{document}

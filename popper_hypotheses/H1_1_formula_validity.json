@@ -1,0 +1,42 @@
+{
+  "id": "TAUG-H1.1",
+  "version": "v1.1",
+  "name": "Validity of formula eta = 1 + 2*alphaM/Lambda for DHOST-Ia",
+  "hypothesis": "The formula eta = 1 + 2*alphaM/Lambda used in TAUG paper v1.1 to derive eta=23/17 is the correct expression for the gravitational slip in DHOST-Ia genuine theories (alphaH != 0, A3 != 0, A4+A3 != 0) in the quasi-static cosmological regime with matter source.",
+  "type": "mathematical_consistency",
+  "falsification_criteria": [
+    {
+      "test_id": "T1.1.1",
+      "name": "Verbatim grep LMNV17 (1703.03797)",
+      "method": "grep \\eta\\s*= and gravitational slip in .tex of LMNV17",
+      "result_S33_F1_013gamma": "NOT FOUND verbatim",
+      "result_S33_F1_013delta": "Only Newtonian limit Psi=(1+alphaH)/(1+alphaT) Phi found, eq 3.12, gives eta=8/9 for TAUG"
+    },
+    {
+      "test_id": "T1.1.2",
+      "name": "Verbatim grep Crisostomi+2019 (1903.11591)",
+      "result_S33_F1_013gamma": "NOT FOUND - paper uses eta as electron degeneracy (stellar physics)"
+    },
+    {
+      "test_id": "T1.1.3",
+      "name": "Verbatim grep Hirano+2019 (1903.08399)",
+      "result_S33_F1_013gamma": "NOT FOUND verbatim"
+    },
+    {
+      "test_id": "T1.1.4",
+      "name": "Verbatim grep Bellini-Sawicki 2014 (1404.3713)",
+      "result_S33_F1_013gamma": "NOT FOUND verbatim - paper uses different definition of eta",
+      "result_other_session": "BS14 line 1123 has full formula with beta_7, c_s^2, alpha_B, alpha_M, alpha_T - DIFFERENT structure"
+    },
+    {
+      "test_id": "T1.1.5",
+      "name": "Frusciante 2019 review (1902.10687)",
+      "result_other_session": "Provides explicit formulas for mu_Phi and mu_Psi in beyond-Horndeski (line 481+), with explicit Omega_m(z) dependence - INCOMPATIBLE with TAUG's z-independent eta=23/17"
+    }
+  ],
+  "decision_logic": {
+    "if_all_tests_negative": "Formula not justified by cited literature - TAUG paper v1.1 has unsourced central derivation",
+    "if_any_test_positive": "Formula validated, eta=23/17 is rigorous prediction",
+    "current_status": "ALL TESTS NEGATIVE in 5 sessions (S33 F1-013-alpha through epsilon) - formula appears to be Horndeski-limit simplification, not DHOST-Ia genuine"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "project": "TAUG/DIAMANT",
+  "session": "S33-F1-013epsilon",
+  "framework": "Popper (Huang et al. 2025, arXiv:2502.09858)",
+  "purpose": "Structured falsifiable hypothesis testing for TAUG modified gravity theory",
+  "hypotheses": [
+    {"id": "H1",   "file": "H1_eta_23_17_static.json",     "name": "Static slip prediction eta=23/17"},
+    {"id": "H1.1", "file": "H1_1_formula_validity.json",   "name": "Formula validity in DHOST-Ia"},
+    {"id": "H2",   "file": "H2_temporal_profile.json",     "name": "Fibonacci-Hirano temporal profile"},
+    {"id": "H3",   "file": "H3_DESI_compatibility.json",   "name": "DESI 2024 MG compatibility"}
+  ],
+  "current_status_summary": {
+    "H1":   "DEPENDS ON H1.1 - if formula wrong, eta=23/17 is artifact",
+    "H1.1": "FAILED in 5 sessions of verbatim grep - formula not in cited literature",
+    "H2":   "INTERNAL CONTRADICTION between Fibonacci profile and RPH MP0=0.014",
+    "H3":   "TOLERATED but NOT PREFERRED by DESI 2024 (likelihood ratio favors GR ~1.75x)"
+  },
+  "decisive_resolution": {
+    "method": "Run EFTCAMB with TAUG-specific parameters",
+    "scripts_ready": ["taug_fib_c0500.ini", "taug_hiclass_propto_omega.ini", "taug_rph_br005.ini"],
+    "expected_runtime": "2-5 days on RTX 5060 Ti",
+    "decisive_if": "EFTCAMB internal formulas (rigorous DHOST-Ia) reproduce or refute eta=23/17 numerically"
+  },
+  "operational_log": {
+    "retractions_O3": 4,
+    "retractions_O2": 4,
+    "retractions_O1": 3,
+    "retractions_O5": "multiple",
+    "retractions_total": 11,
+    "lesson_central": "Method functioning as designed - retractions are SUCCESS, not failure"
+  }
+}

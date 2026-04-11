@@ -1,0 +1,58 @@
+{
+  "id": "TAUG-H3",
+  "version": "v1.1",
+  "name": "DESI 2024 MG compatibility",
+  "hypothesis": "TAUG predictions for (eta_0, mu_0, Sigma_0) are statistically consistent with DESI 2024 MG measurements and not significantly disfavored compared to GR.",
+  "type": "statistical_compatibility",
+  "data_source": {
+    "paper": "arXiv:2411.12026",
+    "table": "Table 2 (LCDM background, DESI(FS+BAO)+CMB+DESY3+DESY5-SN)",
+    "sha16": "3ca2993961393c2a"
+  },
+  "DESI_measurements": {
+    "mu_0": {"central": 0.05, "sigma": 0.22},
+    "Sigma_0": {"central": 0.008, "sigma": 0.045},
+    "eta_0_LCDM_w0wa_estimate": {"central": 0.09, "sigma_up": 0.36, "sigma_down": 0.60}
+  },
+  "TAUG_predictions": {
+    "mu_0": -0.1211,
+    "Sigma_0": 0.0340,
+    "eta_0": 0.3529
+  },
+  "GR_predictions": {
+    "mu_0": 0.0, "Sigma_0": 0.0, "eta_0": 0.0
+  },
+  "tensions": {
+    "mu_0":   {"TAUG_sigma": 0.778, "GR_sigma": 0.227, "ratio_GR_closer": 3.42},
+    "Sigma_0":{"TAUG_sigma": 0.578, "GR_sigma": 0.178, "ratio_GR_closer": 3.25},
+    "eta_0":  {"TAUG_sigma": 0.730, "GR_sigma": 0.150, "ratio_GR_closer": 4.87}
+  },
+  "likelihood_ratio_GR_over_TAUG": 1.751,
+  "interpretation": {
+    "TAUG_within_DESI_1sigma": true,
+    "TAUG_preferred_by_DESI": false,
+    "GR_preferred_by_DESI": "weakly (factor ~1.75)",
+    "DESI_can_distinguish_TAUG_from_GR": false,
+    "explanation": "DESI error bars (~0.36 in eta_0) are too wide to distinguish TAUG (35% deviation) from GR (0% deviation). Both lie within the 1-sigma envelope, but GR is closer to the central value."
+  },
+  "falsification_criteria": [
+    {
+      "test_id": "T3.1",
+      "name": "Likelihood ratio Bayes factor",
+      "current": 1.751,
+      "rejection_threshold": 10,
+      "current_status": "Not yet rejected, but TAUG not favored either"
+    },
+    {
+      "test_id": "T3.2",
+      "name": "Euclid DR1 (Oct 2026) tightening",
+      "expected_sigma_eta_0": 0.05,
+      "TAUG_rejection_if_central_remains_at_0": "7.06 sigma",
+      "decisive": true
+    }
+  ],
+  "no_news_explanation": {
+    "user_question": "If DESI confirmed TAUG, where is the media coverage?",
+    "answer": "DESI did NOT confirm TAUG. DESI measured deviations consistent with GR (mu_0=0.05+/-0.22, Sigma_0=0.008+/-0.045). The error bars are wide enough to also accommodate TAUG's larger predicted deviations, but the data centrals favor GR. There is no media because there is no detection of MG, and TAUG is merely 'tolerated' in the allowed parameter space, not 'confirmed'."
+  }
+}
